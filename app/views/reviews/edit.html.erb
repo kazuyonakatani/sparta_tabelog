@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-lg-12">
+    <h1><font size="5">レビューを編集する</font></h1>
+    <ul>
+      <li>レストラン名：<%= @restaurant.title %></li>
+      <li>電話番号：<%= @restaurant.tel %></li>
+      <li>住所：<%= @restaurant.address %></li>
+      <li>ホームページ：<%= @restaurant.web %></li>
+    </ul>
+
+    <hr>
+    <%= render 'form' %>
+  </div>
+</div>
