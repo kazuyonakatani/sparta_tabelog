@@ -1,19 +1,21 @@
 <div class="col-md-8">
 <p id="notice"><%= notice %></p>
 
-<h1><font size="5">レストラン一覧</font><span class="text-muted pull-right"><%= link_to '新規登録', new_restaurant_path, class: "btn btn-default btn-xs" %></span></h1>
+<h1><font size="5">レストラン一覧</font><span class="text-muted pull-right"><%= link_to '新しいお店を登録する', new_restaurant_path, class: "btn btn-default btn-s" %></span></h1>
 
     <% @restaurants.each do |restaurant| %>
     <div class="panel panel-default">
       <div class="panel-heading">
         <%= restaurant.title %>
+        <span class="text-muted pull-right">更新日：2015/06/27</span>
       </div>
-        <%= restaurant.tel %>
-        <%= restaurant.address %>
-        <%= restaurant.web %>
-        <%= link_to '詳細', restaurant, class: "btn btn-default btn-xs pull-right" %>
+      <%= link_to '詳細', restaurant, class: "btn btn-default btn-xs pull-right" %>
         <%= link_to '編集', edit_restaurant_path(restaurant), class: "btn btn-default btn-xs pull-right" %>
         <%= link_to '削除', restaurant, class: "btn btn-default btn-xs pull-right", method: :delete, data: { confirm: '本当に削除しますか？' } %>
+        TEL：<%= restaurant.tel %><br>
+        住所：<%= restaurant.address %><br>
+        WEB：<%= restaurant.web %><br>
+
       </div>
     <% end %>
 

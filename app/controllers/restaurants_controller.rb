@@ -30,7 +30,7 @@ class RestaurantsController < ApplicationController
 
     respond_to do |format|
       if @restaurant.save
-        format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
+        format.html { redirect_to @restaurant, notice: 'レストラン情報が登録されました。' }
         format.json { render :show, status: :created, location: @restaurant }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class RestaurantsController < ApplicationController
   def update
     respond_to do |format|
       if @restaurant.update(restaurant_params)
-        format.html { redirect_to @restaurant, notice: 'Restaurant was successfully updated.' }
+        format.html { redirect_to @restaurant, notice: 'レストラン情報が更新されました。' }
         format.json { render :show, status: :ok, location: @restaurant }
       else
         format.html { render :edit }
