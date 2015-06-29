@@ -9,13 +9,15 @@
         <%= restaurant.title %>
         <span class="text-muted pull-right">更新日：2015/06/27</span>
       </div>
+      <div class="panel-body">
+      <img class="img-responsive user-photo" src="http://uds.gnst.jp/rest/img/r6b2zs8z0000/t_004f.jpg">
       <%= link_to '詳細', restaurant, class: "btn btn-default btn-xs pull-right" %>
         <%= link_to '編集', edit_restaurant_path(restaurant), class: "btn btn-default btn-xs pull-right" %>
         <%= link_to '削除', restaurant, class: "btn btn-default btn-xs pull-right", method: :delete, data: { confirm: '本当に削除しますか？' } %>
         TEL：<%= restaurant.tel %><br>
         住所：<%= restaurant.address %><br>
         WEB：<%= restaurant.web %><br>
-
+        </div>
       </div>
     <% end %>
 
