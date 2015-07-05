@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :scores
   devise_for :users
   resources :restaurants do
-    resources :reviews
+  resources :reviews
   end
 
   root 'restaurants#index'

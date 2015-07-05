@@ -1,5 +1,7 @@
+<div class="col-md-8">
 <p id="notice"><%= notice %></p>
 
+<h1><font size="5">レストラン詳細情報</font></h1>
 <p>
   <img src="<%= @restaurant.visual %>" alt="" class="img-responsive user-photo pull-left" width="120" height="120"></td>
 </p>
@@ -30,9 +32,9 @@
   <%= @restaurant.web %>
 </p>
 
-<%= link_to '編集', edit_restaurant_path(@restaurant) %> |
-<%= link_to '戻る', restaurants_path %>
-<%= link_to 'レビューを書く', new_restaurant_review_path(@restaurant) %>
+<%= link_to '編集', edit_restaurant_path(@restaurant), class: "btn active btn-danger btn-s" %>
+<%= link_to '戻る', restaurants_path, class: "btn active btn-danger btn-s" %>
+<%= link_to 'レビューを書く', new_restaurant_review_path(@restaurant), class: "btn active btn-danger btn-s" %>
 
 <hr>
 

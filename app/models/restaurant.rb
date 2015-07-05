@@ -3,7 +3,9 @@ class Restaurant < ActiveRecord::Base
   has_many :users, through: :reviews
 
   def average_score_star(restaurant_id)
-   if Review.where(restaurant_id: restaurant_id).average(:score) == 5
+  if Review.where(restaurant_id: restaurant_id).count == 0
+    return "まだレビューはありません"
+   elsif Review.where(restaurant_id: restaurant_id).average(:score) == 5
      return "★★★★★"
    elsif Review.where(restaurant_id: restaurant_id).average(:score) >= 4
      return "★★★★☆"
@@ -11,15 +13,15 @@ class Restaurant < ActiveRecord::Base
      return "★★★☆☆"
    elsif Review.where(restaurant_id: restaurant_id).average(:score) >= 2
      return "★★☆☆☆"
-   elsif Review.where(restaurant_id: restaurant_id).average(:score) >= 1
-     return "★☆☆☆☆"
    else
-     return "☆☆☆☆☆"
+     return "★☆☆☆☆"
    end
   end
 
-    def score_star(restaurant_id)
-   if Review.where(restaurant_id: restaurant_id).average(:score) == 5
+  def score_star(restaurant_id)
+  if Review.where(restaurant_id: restaurant_id).count == 0
+    return "まだレビューはありません"
+   elsif Review.where(restaurant_id: restaurant_id).average(:score) == 5
      return "★★★★★"
    elsif Review.where(restaurant_id: restaurant_id).average(:score) >= 4
      return "★★★★☆"
@@ -27,10 +29,8 @@ class Restaurant < ActiveRecord::Base
      return "★★★☆☆"
    elsif Review.where(restaurant_id: restaurant_id).average(:score) >= 2
      return "★★☆☆☆"
-   elsif Review.where(restaurant_id: restaurant_id).average(:score) >= 1
-     return "★☆☆☆☆"
    else
-     return "☆☆☆☆☆"
+     return "★☆☆☆☆"
    end
   end
 end

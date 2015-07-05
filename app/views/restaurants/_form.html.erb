@@ -31,7 +31,10 @@
     <%= f.label :visual, "画像" %><br>
     <%= f.text_field :visual %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div>
+    <%= f.submit "登録する", class: "btn active btn-danger btn-s" %>
+    <%= link_to '戻る', restaurants_path, class: "btn active btn-danger btn-s" %>
   </div>
 <% end %>
+
