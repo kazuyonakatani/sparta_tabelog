@@ -58,7 +58,7 @@ class RestaurantsController < ApplicationController
   def destroy
     @restaurant.destroy
     respond_to do |format|
-      format.html { redirect_to restaurants_url, notice: 'Restaurant was successfully destroyed.' }
+      format.html { redirect_to restaurants_url, notice: 'レストラン情報が削除されました。' }
       format.json { head :no_content }
     end
   end
@@ -71,6 +71,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:title, :tel, :address, :web)
+      params.require(:restaurant).permit(:title, :tel, :address, :web, :visual)
     end
 end
