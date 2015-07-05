@@ -26,7 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 group :production do
-# gem 'mysql2', '= 0.3.16'
+ gem 'mysql2', '= 0.3.16'
 end
 
 # Use Unicorn as the app server
@@ -46,7 +46,7 @@ group :development, :test do
   gem 'spring'
 
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  #gem 'sqlite3'
 end
 
 
