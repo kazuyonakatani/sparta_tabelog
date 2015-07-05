@@ -6,15 +6,15 @@ class Restaurant < ActiveRecord::Base
   if Review.where(restaurant_id: restaurant_id).count == 0
     return "まだレビューはありません"
    elsif Review.where(restaurant_id: restaurant_id).average(:score) == 5
-     return "★★★★★"
+     return "https://checkout.google.com/img/composite-5.gif"
    elsif Review.where(restaurant_id: restaurant_id).average(:score) >= 4
-     return "★★★★☆"
+     return "https://checkout.google.com/img/composite-4.gif"
    elsif Review.where(restaurant_id: restaurant_id).average(:score) >= 3
-     return "★★★☆☆"
+     return "https://checkout.google.com/img/composite-3.gif"
    elsif Review.where(restaurant_id: restaurant_id).average(:score) >= 2
-     return "★★☆☆☆"
+     return "https://checkout.google.com/img/composite-2.gif"
    else
-     return "★☆☆☆☆"
+     return "https://checkout.google.com/img/composite-1.gif"
    end
   end
 
@@ -22,15 +22,15 @@ class Restaurant < ActiveRecord::Base
   if Review.where(restaurant_id: restaurant_id).count == 0
     return "まだレビューはありません"
    elsif Review.where(restaurant_id: restaurant_id).average(:score) == 5
-     return "★★★★★"
+     return "https://checkout.google.com/img/composite-5.gif"
    elsif Review.where(restaurant_id: restaurant_id).average(:score) >= 4
-     return "★★★★☆"
+     return "https://checkout.google.com/img/composite-4.gif"
    elsif Review.where(restaurant_id: restaurant_id).average(:score) >= 3
-     return "★★★☆☆"
+     return "https://checkout.google.com/img/composite-3.gif"
    elsif Review.where(restaurant_id: restaurant_id).average(:score) >= 2
-     return "★★☆☆☆"
+     return "https://checkout.google.com/img/composite-2.gif"
    else
-     return "★☆☆☆☆"
+     return "https://checkout.google.com/img/composite-1.gif"
    end
   end
 end

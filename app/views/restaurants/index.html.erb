@@ -17,6 +17,7 @@
         <%= link_to '編集', edit_restaurant_path(restaurant), class: "btn active btn-warning btn-product pull-right" %>
         <%= link_to '削除', restaurant_path(restaurant), class: "btn active btn-danger btn-product pull-right", method: :delete, data: { confirm: '本当に削除しますか？' } %>
         <%= link_to '詳細', restaurant_path(restaurant), class: "btn active btn-info btn-product pull-right" %>
+        スコア：<img src="<%= restaurant.average_score_star(restaurant) %>"><br>
         TEL：<%= restaurant.tel %><br>
         住所：<%= restaurant.address %><br>
         WEB：<%= restaurant.web %><br>

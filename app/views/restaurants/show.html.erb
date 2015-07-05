@@ -13,7 +13,7 @@
 
 <p>
   <strong>平均スコア:</strong>
-  <%= @restaurant.average_score_star(@restaurant) %> <%= @score_average %>
+  <img src="<%= @restaurant.average_score_star(@restaurant) %>"> <%= @score_average %>
 
 </p>
 
@@ -23,13 +23,16 @@
 </p>
 
 <p>
-  <strong>住所:</strong>
-  <%= @restaurant.address %>
+  <strong>WEB:</strong>
+  <%= @restaurant.web %>
 </p>
 
 <p>
-  <strong>WEB:</strong>
-  <%= @restaurant.web %>
+  <strong>住所:</strong>
+  <%= @restaurant.address %>
+</p>
+<p>
+<iframe src="http://maps.google.co.jp/maps?q=<%= @restaurant.address %>&z=14&output=embed" height="350" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 </p>
 
 <%= link_to '編集', edit_restaurant_path(@restaurant), class: "btn active btn-danger btn-s" %>
@@ -42,7 +45,7 @@
 <% @restaurant.reviews.each do |review| %>
 
   <p>
-    スコア：<%= @restaurant.score_star(@restaurant) %> <%= review.score %><br>
+    スコア：<img src="<%= @restaurant.score_star(@restaurant) %>"> <%= review.score %><br>
     <%= review.body %><br>
     by <%= review.user.email %>さん
   </p>
